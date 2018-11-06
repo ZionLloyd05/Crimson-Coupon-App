@@ -4,10 +4,16 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
-
+var mongoose = require('mongoose');
 var app = express();
 var router = express.Router();
 
+//==============================================
+// Mongoose Connection
+//==============================================
+// http://mongoosejs.com/docs/promises.html
+mongoose.Promise = global.Promise;
+mongoose.connect('mongodb://localhost:27017/CouponDB');
 // // view engine setup
 // app.set('views', path.join(__dirname, 'views'));
 // app.set('view engine', 'jade');
